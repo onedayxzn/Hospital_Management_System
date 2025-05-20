@@ -1,0 +1,13 @@
+*.pyc
+*.pyo
+*.log
+*.db
+*.swp
+*.zip
+__pycache__/
+.vscode/
+.idea/
+.DS_Store
+.env
+odoo.conf
+filestore/
