@@ -23,8 +23,10 @@ Long description of module's purpose
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/patients_readonly_views.xml',
+        'data/sequence.xml',
         'views/patients_views.xml',
+        'views/patients_readonly_views.xml',
+        'views/appointments_views.xml',
         'views/menu.xml',
 
 
