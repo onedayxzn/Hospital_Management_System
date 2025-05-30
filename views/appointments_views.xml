@@ -9,6 +9,7 @@
                 <field name="patient_id"/>
                 <field name="appointment_date" optional="show"/>
                 <field name="note"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
@@ -18,6 +19,13 @@
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
             <form string="Appointments">
+                <header>
+                <button name="action_confirm" type="object" string="Confirm" state="confirmed" class="oe_highlight" invisible = "state != 'draft'"/>
+                <button name="action_cancel" type="object" string="Cancel" state="cancelled" class="oe_link" invisible= "state == 'done'" />
+                <button name="action_ongoing" type="object" string="Ongoing" state="ongoing" class="oe_link" invisible="state != 'confirmed'"  />
+                <button name="action_done" type="object" string="Done" state="done" class="oe_link" invisible="state != 'ongoing'"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft, confirmed, ongoing, done"/>
+                </header> 
                 <sheet>
                     <group>
                         <group>
